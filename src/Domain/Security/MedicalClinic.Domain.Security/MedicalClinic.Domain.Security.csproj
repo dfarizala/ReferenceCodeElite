@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <WarningLevel>4</WarningLevel>
+	  <DocumentationFile>bin\Debug\net5.0\MedicalClinic.Domain.Security.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Spin" Version="0.2.0.12" />
+		<PackageReference Include="MediatR" Version="10.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="CQRS\" />
+	  <None Remove="Entities\" />
+	  <None Remove="Interfaces\" />
+	  <None Remove="Entities\Request\" />
+	  <None Remove="Entities\Response\" />
+	  <None Remove="Interfaces\Application\" />
+	  <None Remove="Interfaces\Persistence\" />
+	  <None Remove="CQRS\Commands\" />
+	  <None Remove="CQRS\Queries\" />
+	  <None Remove="CQRS\Queries\Request\" />
+	  <None Remove="CQRS\Queries\Response\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Interfaces\" />
+	  <Folder Include="Interfaces\Application\" />
+	  <Folder Include="Interfaces\Persistence\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Base\MedicalClinic.Domain\MedicalClinic.Domain.csproj" />
+	</ItemGroup>
+</Project>

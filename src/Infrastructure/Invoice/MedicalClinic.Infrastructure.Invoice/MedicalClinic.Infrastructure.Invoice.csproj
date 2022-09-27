@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Spin" Version="0.2.0.12" />
+		<PackageReference Include="AutoMapper" Version="11.0.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.6" />
+		<PackageReference Include="MediatR" Version="10.0.1" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="CQRS\" />
+		<None Remove="CQRS\Commands\" />
+		<None Remove="CQRS\Queries\" />
+		<None Remove="Mapper\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="CQRS\Commands\" />
+		<Folder Include="Mapper\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\Domain\Invoice\MedicalClinic.Domain.Invoice\MedicalClinic.Domain.Invoice.csproj" />
+	  <ProjectReference Include="..\..\Base\MedicalClinic.Infrastructure.Helper\MedicalClinic.Infrastructure.Helper.csproj" />
+	</ItemGroup>
+</Project>

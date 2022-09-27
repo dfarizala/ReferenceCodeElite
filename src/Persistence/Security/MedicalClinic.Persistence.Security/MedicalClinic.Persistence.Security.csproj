@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <WarningLevel>4</WarningLevel>
+	  <DocumentationFile>bin\Debug\net5.0\MedicalClinic.Persistence.Security.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Spin" Version="0.2.0.12" />
+		<PackageReference Include="AutoMapper" Version="11.0.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Domain\Security\MedicalClinic.Domain.Security\MedicalClinic.Domain.Security.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Contexts\" />
+	  <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
+	  <None Remove="Repository\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Contexts\" />
+	  <Folder Include="Repository\" />
+	</ItemGroup>
+</Project>

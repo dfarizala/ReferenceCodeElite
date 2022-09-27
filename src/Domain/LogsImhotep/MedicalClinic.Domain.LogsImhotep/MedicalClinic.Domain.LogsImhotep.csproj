@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Spin" Version="0.2.0.12" />
+		<PackageReference Include="MediatR" Version="9.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="CQRS\" />
+	  <None Remove="Entities\" />
+	  <None Remove="Interfaces\" />
+	  <None Remove="Entities\Request\" />
+	  <None Remove="Entities\Response\" />
+	  <None Remove="Interfaces\Application\" />
+	  <None Remove="Interfaces\Persistence\" />
+	  <None Remove="CQRS\Commands\" />
+	  <None Remove="CQRS\Queries\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="CQRS\" />
+	  <Folder Include="Entities\" />
+	  <Folder Include="Interfaces\" />
+	  <Folder Include="Entities\Request\" />
+	  <Folder Include="Entities\Response\" />
+	  <Folder Include="Interfaces\Application\" />
+	  <Folder Include="Interfaces\Persistence\" />
+	  <Folder Include="CQRS\Commands\" />
+	  <Folder Include="CQRS\Queries\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Base\MedicalClinic.Domain\MedicalClinic.Domain.csproj" />
+	</ItemGroup>
+</Project>

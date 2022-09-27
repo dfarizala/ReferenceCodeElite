@@ -1,0 +1,10 @@
+﻿@model SpinFieldSelect
+@using Spin.Modules.Entity.Backend.Generator.Select
+@{
+
+}
+
+<select id='@(Model.Name)' name='@(Model.Name)' ng-model='@(Model.Name)' class="select-boolean-filter" filter-boolean>
+    <option value=true>Yes</option>
+    <option value=false>No</option>
+</select>

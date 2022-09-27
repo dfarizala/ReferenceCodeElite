@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="Spin" Version="0.2.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Application\" />
+    <None Remove="Integration\" />
+    <None Remove="Extend\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\" />
+    <Folder Include="Integration\" />
+    <Folder Include="Extend\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Domain\Base\MedicalClinic.Domain\MedicalClinic.Domain.csproj" />
+    <ProjectReference Include="..\..\..\src\Application\Invoice\MedicalClinic.Application.Invoice\MedicalClinic.Application.Invoice.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "target": "ES6",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "rootDirs": [
+  ],
+  "compileOnSave": true,
+  "exclude": [
+      "node_modules",
+      "**/*.spec.ts"
+  ]
+}

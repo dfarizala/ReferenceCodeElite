@@ -1,0 +1,19 @@
+version: '3'
+services:
+  PostgresImhotep:
+    container_name: PostgresImhotepDB
+    image: "postgres"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "ZrMy4sIwCL7rIMHOTEP"
+      PGDATA: "/data/postgres"
+    volumes:
+       - /Users/andres/Documents/Docker/Posgress/data:/data/postgres
+       - /Users/andres/Documents/Docker/Posgress/backup:/data/backup
+    ports:
+      - "5432:5432"
+    restart: always
+    logging:
+      options:
+        max-size: "1000M"
+        max-file: "10"

@@ -1,0 +1,71 @@
+﻿@{
+    this.SpinViewPage.IsLayout = true;
+
+    this.SpinViewPage.AddStyle("/spin-sys/dist/css/BaseSpin.min.css");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Meta tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>@(CompanyFactory.Information.Name)  - @SpinViewPage.Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link href='@(SpinViewPage.ValidateURL("/lib/font-awesome/css/all.min.css"))' rel="stylesheet" type="text/css" async />
+    <link href='@(SpinViewPage.ValidateURL("/lib/bootstrap/dist/css/bootstrap.min.css"))' rel="stylesheet" type="text/css" async />
+    
+    <link href='@(SpinViewPage.ValidateURL("/lib/animate.css/animate.css"))' rel="stylesheet" type="text/css" async />
+    @SpinViewPage.Styles.Render()
+    <link href='@(SpinViewPage.ValidateURL("/Spin/Themes/SubSite/Resource/css/backend/general-backend.css"))' rel="stylesheet" type="text/css" async />
+    <link href='@(SpinViewPage.ValidateURL("/Spin/Themes/SubSite/Resource/css/backend/general-backend-media.css"))' rel="stylesheet" type="text/css" async />
+    <link href='@(SpinViewPage.ValidateURL("/css/BaseSpinBackExtend.css"))' rel="stylesheet" type="text/css" async />
+    <link href='@(SpinViewPage.ValidateURL("/css/BaseSpinBackExtend-media.css"))' rel="stylesheet" type="text/css" async />
+
+</head>
+<body>
+    <div id="wrapper">
+        <main>
+            <div class="content-data-login" style="background-image: url('@SpinViewPage.RelativePath("/backend/background-login.jpg")');">
+                <div class="row no-gutters justify-content-md-center backgroud-opacity index-login">
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-4 align-self-center index-login-margin">
+                        <div class="content-login">
+                            <div class="content-logo">
+                                <a href="/Admin">
+                                    <img class="logo" src='@SpinViewPage.RelativePath("logo-login.png")' />
+                                    <img class="logo logo-line" src='@SpinViewPage.RelativePath("/backend/line-home.png")' />
+                                </a>
+                            </div>
+                            <div>
+                                @RenderBody()
+                            </div>
+                            <div class="content-error">
+                                @foreach (var MessageData in SpinViewPage.MessagesInformation.GetItems())
+                                {
+                                    <div class="error-item @(MessageData.TypeMessage.ToString().ToLower())">
+                                        @MessageData.MessageContent
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-login">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-12">
+                                <img src='@SpinViewPage.RelativePath("/backend/logo-footer-information.png")' class="icon-logo-information" />
+                                @CompanyFactory.Information.Name VS @CompanyFactory.Information.Version (@(CompanyFactory.Information.TypeVersion)) | © @DateTime.Now.Year @CompanyFactory.Information.Copyright
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!--Scripts-->
+    <script src='@SpinViewPage.ValidateURL("/lib/jquery/dist/jquery.min.js")' type="text/javascript"></script>
+    <script src='@SpinViewPage.ValidateURL("/lib/jquery-validation/dist/jquery.validate.js")' type="text/javascript"></script>
+
+    @SpinViewPage.JavaScripts.Render()
+</body>
+</html>

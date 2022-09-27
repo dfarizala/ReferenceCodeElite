@@ -1,0 +1,195 @@
+version: "3.8"
+
+services:
+  medical-DB-dev:
+    image: mcr.microsoft.com/mssql/server:2019-CU12-ubuntu-20.04
+    user: '0:0'
+    container_name: medical-DB-dev
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Medical01..Home
+      - MSSQL_PID=Express
+    volumes:
+      - /var/medical/data:/var/opt/mssql
+    networks:
+      medicalnet:
+        aliases:
+          - medicaldb
+    restart: unless-stopped
+    logging:
+      options:
+        max-size: "1000M"
+        max-file: "10"
+
+  mongodb:
+    image : mongo
+    container_name: mongodb
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /var/medical/mongoData:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      medicalnet:
+        aliases:
+          - mongodb
+    restart: unless-stopped
+  nginx:
+    image: 'nginx:latest'
+    container_name: nginx
+    deploy:
+      #resources:
+        #limits:
+          #memory: 250M
+        #reservations:
+          #memory: 150M
+      restart_policy:
+        condition: on-failure
+        max_attempts: 5    
+    networks:
+      medicalnet:
+        aliases:
+          - ngix
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8010:8010'
+    volumes:
+      - '/var/www/nginx:/etc/nginx/conf.d'
+    logging:
+      options:
+        max-size: "1000M"
+        max-file: "5" 
+  invoice:
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    container_name: invoice 
+    environment:
+      - 'ASPNETCORE_URLS=http://*:3300'
+      - 'ASPNETCORE_ENVIRONMENT=Development'
+    deploy:
+      #resources:
+        #limits:
+          #memory: 650M
+        #reservations:
+          #memory: 325M
+      restart_policy:
+        condition: on-failure
+        max_attempts: 10
+    volumes:
+      - '/var/www/microservice/invoice:/app'
+      - '/var/www/microservice/config/invoice/appsettings-invoice.json:/app/appsettings.json'  
+      - '/var/www/microservice/config/invoice/init-spin.sh:/app/init-spin.sh'    
+    networks:
+      medicalnet:
+        aliases:
+          - invoicemicroservice
+    working_dir: /app
+    entrypoint:
+      - sh
+      - /app/init-spin.sh
+    ports:
+      - '3300:3300'
+    logging:
+      options:
+        max-size: "1000M"
+        max-file: "10"
+
+  pharmacy:
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    container_name: pharmacy 
+    environment:
+      - 'ASPNETCORE_URLS=http://*:3310'
+      - 'ASPNETCORE_ENVIRONMENT=Development'
+    networks:
+      medicalnet:
+        aliases:
+          - pharmacymicroservice
+    deploy:
+      #resources:
+        #limits:
+          #memory: 650M
+        #reservations:
+          #memory: 325M
+      restart_policy:
+        condition: on-failure
+        max_attempts: 10
+    volumes:
+      - '/var/www/microservice/pharmacy:/app'
+      - '/var/www/microservice/config/pharmacy/appsettings-pharmacy.json:/app/appsettings.json'  
+      - '/var/www/microservice/config/pharmacy/init-spin.sh:/app/init-spin.sh'    
+
+  logImhotep:
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    container_name: logImhotep 
+    environment:
+      - 'ASPNETCORE_URLS=http://*:3330'
+      - 'ASPNETCORE_ENVIRONMENT=Development'
+    deploy:
+      #resources:
+        #limits:
+          #memory: 650M
+        #reservations:
+          #memory: 325M
+      restart_policy:
+        condition: on-failure
+        max_attempts: 10
+    volumes:
+      - "/var/www/microservice/logImhotep:/app"
+      - "/var/www/microservice/config/logImhotep/appsettings-logImhotep.json:/app/appsettings.json"  
+      - "/var/www/microservice/config/logImhotep/init-spin.sh:/app/init-spin.sh"    
+    networks:
+      medicalnet:
+        aliases:
+          - logImhotepmicroservice
+    working_dir: /app
+    entrypoint:
+      - sh
+      - /app/init-spin.sh
+    ports:
+      - '3330:3330'
+    logging:
+      options:
+        max-size: "1000M"
+        max-file: "10"
+
+  security:
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    container_name: security 
+    environment:
+      - 'ASPNETCORE_URLS=http://*:3340'
+      - 'ASPNETCORE_ENVIRONMENT=Development'
+    deploy:
+      #resources:
+        #limits:
+          #memory: 650M
+        #reservations:
+          #memory: 325M
+      restart_policy:
+        condition: on-failure
+        max_attempts: 10
+    volumes:
+      - '/var/www/microservice/security:/app'
+      - '/var/www/microservice/config/security/appsettings-security.json:/app/appsettings.json'  
+      - '/var/www/microservice/config/security/init-spin.sh:/app/init-spin.sh'    
+    networks:
+      medicalnet:
+        aliases:
+          - securitymicroservice
+    working_dir: /app
+    entrypoint:
+      - sh
+      - /app/init-spin.sh
+    ports:
+      - '3340:3340'
+    logging:
+      options:
+        max-size: "1000M"
+        max-file: "10"
+
+
+networks:
+  medicalnet:

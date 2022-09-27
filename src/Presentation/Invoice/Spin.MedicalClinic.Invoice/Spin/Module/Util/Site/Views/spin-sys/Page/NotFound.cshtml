@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "/Spin/Themes/Shared/spin-sys/IndexBlank.cshtml";
+
+    this.SpinViewPage.AddStyle("/spin-sys/dist/css/BaseSpin.min.css");
+    this.SpinViewPage.AddStyle("/Spin/Module/Util/Resource/spin-sys/css/Page.css");
+    this.SpinViewPage.AddStyle("/Spin/Module/Util/Resource/spin-sys/css/Page-media.css");
+}
+
+<div class="content-page">
+    <div class="row content-page align-items-center">
+        <div class="col-12 col-md-6 img-state">
+            <img class="" src='@SpinViewPage.RelativePath("404.svg")' />
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="number-status">
+                404
+            </div>
+            <div class="text-status">
+                SORRY
+            </div>
+            <div class="title-status">
+                PAGE NOT FOUND
+            </div>
+        </div>
+    </div>
+</div>

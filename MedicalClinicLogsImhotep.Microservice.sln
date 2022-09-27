@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{090C415F-82CB-4F0C-9152-0986105F9855}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{369E0177-2E2C-45D6-B99A-BE521E3A4941}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{24AFA8E2-7EE8-484D-93EB-7D6D46BD60B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A98F4BF9-B5B4-462B-9E72-7EC0D36E7AAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{FE8A65E2-F0C7-4664-B254-87DB2C7D282F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{AF423C84-CFEF-41CC-8137-E66505ADACAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalClinic.Domain", "src\Domain\Base\MedicalClinic.Domain\MedicalClinic.Domain.csproj", "{020F546B-8B35-4101-BE11-DD879B5451C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalClinic.Infrastructure.Helper", "src\Infrastructure\Base\MedicalClinic.Infrastructure.Helper\MedicalClinic.Infrastructure.Helper.csproj", "{9508ED93-BFD9-43C7-BE46-490BBE88D690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalClinic.Application.LogsImhotep", "src\Application\LogsImhotep\MedicalClinic.Application.LogsImhotep\MedicalClinic.Application.LogsImhotep.csproj", "{ACF8E5BF-D66D-4ADC-9ECA-61B7122AC21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalClinic.Domain.LogsImhotep", "src\Domain\LogsImhotep\MedicalClinic.Domain.LogsImhotep\MedicalClinic.Domain.LogsImhotep.csproj", "{418413AD-E627-44FD-A108-0481956E9DB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalClinic.Infrastructure.LogsImhotep", "src\Infrastructure\LogsImhotep\MedicalClinic.Infrastructure.LogsImhotep\MedicalClinic.Infrastructure.LogsImhotep.csproj", "{21FB2F1C-0F4E-4072-95EF-FC6323074C90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalClinic.Persistence.LogsImhotep", "src\Persistence\LogsImhotep\MedicalClinic.Persistence.LogsImhotep\MedicalClinic.Persistence.LogsImhotep.csproj", "{D650B105-4833-461A-A013-96A113441837}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spin.WebSite.MedicalClinic.LogsImhotep", "src\Presentation\LogsImhotep\Spin.MedicalClinic.LogsImhotep\Spin.WebSite.MedicalClinic.LogsImhotep.csproj", "{9AC0E01B-F680-4974-B46A-D5CA907187F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{020F546B-8B35-4101-BE11-DD879B5451C8}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{020F546B-8B35-4101-BE11-DD879B5451C8}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{020F546B-8B35-4101-BE11-DD879B5451C8}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{020F546B-8B35-4101-BE11-DD879B5451C8}.Release|anycpu.Build.0 = Release|Any CPU
+		{9508ED93-BFD9-43C7-BE46-490BBE88D690}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{9508ED93-BFD9-43C7-BE46-490BBE88D690}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{9508ED93-BFD9-43C7-BE46-490BBE88D690}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{9508ED93-BFD9-43C7-BE46-490BBE88D690}.Release|anycpu.Build.0 = Release|Any CPU
+		{ACF8E5BF-D66D-4ADC-9ECA-61B7122AC21F}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{ACF8E5BF-D66D-4ADC-9ECA-61B7122AC21F}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{ACF8E5BF-D66D-4ADC-9ECA-61B7122AC21F}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{ACF8E5BF-D66D-4ADC-9ECA-61B7122AC21F}.Release|anycpu.Build.0 = Release|Any CPU
+		{418413AD-E627-44FD-A108-0481956E9DB9}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{418413AD-E627-44FD-A108-0481956E9DB9}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{418413AD-E627-44FD-A108-0481956E9DB9}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{418413AD-E627-44FD-A108-0481956E9DB9}.Release|anycpu.Build.0 = Release|Any CPU
+		{21FB2F1C-0F4E-4072-95EF-FC6323074C90}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{21FB2F1C-0F4E-4072-95EF-FC6323074C90}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{21FB2F1C-0F4E-4072-95EF-FC6323074C90}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{21FB2F1C-0F4E-4072-95EF-FC6323074C90}.Release|anycpu.Build.0 = Release|Any CPU
+		{D650B105-4833-461A-A013-96A113441837}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{D650B105-4833-461A-A013-96A113441837}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{D650B105-4833-461A-A013-96A113441837}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{D650B105-4833-461A-A013-96A113441837}.Release|anycpu.Build.0 = Release|Any CPU
+		{9AC0E01B-F680-4974-B46A-D5CA907187F3}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{9AC0E01B-F680-4974-B46A-D5CA907187F3}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{9AC0E01B-F680-4974-B46A-D5CA907187F3}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{9AC0E01B-F680-4974-B46A-D5CA907187F3}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91064868-244D-4445-8D67-571DCAC657D7}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{020F546B-8B35-4101-BE11-DD879B5451C8} = {24AFA8E2-7EE8-484D-93EB-7D6D46BD60B0}
+		{9508ED93-BFD9-43C7-BE46-490BBE88D690} = {A98F4BF9-B5B4-462B-9E72-7EC0D36E7AAC}
+		{ACF8E5BF-D66D-4ADC-9ECA-61B7122AC21F} = {369E0177-2E2C-45D6-B99A-BE521E3A4941}
+		{418413AD-E627-44FD-A108-0481956E9DB9} = {24AFA8E2-7EE8-484D-93EB-7D6D46BD60B0}
+		{21FB2F1C-0F4E-4072-95EF-FC6323074C90} = {A98F4BF9-B5B4-462B-9E72-7EC0D36E7AAC}
+		{D650B105-4833-461A-A013-96A113441837} = {FE8A65E2-F0C7-4664-B254-87DB2C7D282F}
+		{9AC0E01B-F680-4974-B46A-D5CA907187F3} = {090C415F-82CB-4F0C-9152-0986105F9855}
+	EndGlobalSection
+EndGlobal

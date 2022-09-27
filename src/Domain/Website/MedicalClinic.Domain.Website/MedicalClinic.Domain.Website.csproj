@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Spin" Version="0.2.0.12" />
+		<PackageReference Include="MediatR" Version="9.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="DTO\" />
+	  <None Remove="Entities\" />
+	  <None Remove="Interfaces\" />
+	  <None Remove="Entities\Request\" />
+	  <None Remove="Entities\Response\" />
+	  <None Remove="DTO\Request\" />
+	  <None Remove="DTO\Response\" />
+	  <None Remove="Interfaces\Application\" />
+	  <None Remove="Entities\Information\" />
+	  <None Remove="DTO\Request\Security\" />
+	  <None Remove="DTO\Response\Security\" />
+	  <None Remove="Interfaces\Application\Security\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Entities\" />
+	  <Folder Include="Interfaces\" />
+	  <Folder Include="Entities\Request\" />
+	  <Folder Include="Entities\Response\" />
+	  <Folder Include="Interfaces\Application\" />
+	  <Folder Include="Entities\Information\" />
+	  <Folder Include="Interfaces\Application\Security\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Base\MedicalClinic.Domain\MedicalClinic.Domain.csproj" />
+	  <ProjectReference Include="..\..\Security\MedicalClinic.Domain.Security\MedicalClinic.Domain.Security.csproj" />
+	</ItemGroup>
+</Project>

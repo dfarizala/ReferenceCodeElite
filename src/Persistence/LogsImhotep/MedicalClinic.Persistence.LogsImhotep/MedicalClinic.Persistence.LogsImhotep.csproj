@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Spin" Version="0.2.0.12" />
+		<PackageReference Include="AutoMapper" Version="10.1.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="Persistence\" />
+		<None Remove="Migrations\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Contexts\" />
+		<Folder Include="Migrations\" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Domain\LogsImhotep\MedicalClinic.Domain.LogsImhotep\MedicalClinic.Domain.LogsImhotep.csproj" />
+		<ProjectReference Include="..\..\..\Domain\Base\MedicalClinic.Domain\MedicalClinic.Domain.csproj" />
+	</ItemGroup>
+</Project>
